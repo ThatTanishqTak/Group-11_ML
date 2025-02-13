@@ -31,7 +31,7 @@ Choose at least three (ideally up to eight) classification methods:
 - Plot a **single ROC curve** comparing all models.  
 - Display **confusion matrices** for each model.  
 
-### **4. Hyperparameter Tuning (Comparison of Default vs Optimized Parameters)**  
+### **4. Hyperparameter Tuning**  
 - Show results for default settings first.  
 - Use **GridSearchCV** or **RandomizedSearchCV** for optimization.  
 - Compare both results.  
@@ -43,6 +43,6 @@ Choose at least three (ideally up to eight) classification methods:
 ---
 ## **TLDR**  
 
-### 📁 **Group Submission**  
+### **Group Submission**  
 - Code sections: Load dataset, train classifiers, evaluate models, plot comparisons.  
 - Includes results, hyperparameter tuning, ROC curve, confusion matrices.  

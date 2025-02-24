@@ -1,48 +1,93 @@
-# **Classical Machine Learning**
+# G6 Connected Games Development Project
 
-## **Part I – Group Submission (.ipynb)**  
+## Coursework 1 Group 11
 
-This project focuses on implementing multiple classification models on the `digits` dataset from `scikit-learn`. The notebook follows a structured template and includes:  
+**[Name] [K-Number]**
 
-### **1. Load the Dataset**  
-- Use `sklearn.datasets.load_digits()`.  
-- No external CSVs or websites.  
-- Split data into **80% training** and **20% testing**.  
+## Loading Modules
 
-### **2. Classification Models (3 to 8 Methods)**  
-Choose at least three (ideally up to eight) classification methods:
+```python
+# Loading load_digits from scikit-learn
+from sklearn.datasets import load_digits
+# Loading train_test_split and GridSearchCV from scikit-learn
+from sklearn.model_selection import train_test_split, GridSearchCV
+# Importing Random Forest and Decision Tree
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+# Importing all the necessary metrics for evaluation
+from sklearn.metrics import balanced_accuracy_score, roc_auc_score, roc_curve, confusion_matrix, ConfusionMatrixDisplay
+# For plotting
+import matplotlib.pyplot as plt
+# Importing numpy
+import numpy as np
+```
 
-#### **Baseline Models:**
-> We can use different models, however these are the ones mostly discused in class.
+*Might need more or fewer modules according to ur needs.*
+
+## Loading Data
+
+```python
+# Assign load_digits here
+digits = load_digits()
+# Assigning load_digits's data and target to X and Y
+x, y = digits.data, digits.target
+# Splitting the data for training and testing: 80% for training and 20% for testing
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=7)
+```
+
+*Ensure every **`random_state`** is set to 7 for consistency in data.*
+
+## Classification Methods
+
+Work on the two classification methods from the list below:
+
+- Logistic Regression
+- Support Vector Machines (SVM)
+- Random Forest
+- Gradient Boosting Machines (GBM)
+- XGBoost
+- LightGBM
+- CatBoost
 - k-Nearest Neighbors (KNN)
-  
-#### **Advanced Models:**  
-- Support Vector Machine (SVM)  
+- Decision Trees
+- Naive Bayes
+- AdaBoost
 
-#### **With Dimensionality Reduction (Optional for More Variations)**  
-- PCA + SVM
-  
-### **3. Model Training & Testing (Separate Sections in Notebook)**  
-- Train each classifier using the training set.  
-- Tune hyperparameters (Grid Search for SVM).  
-- Evaluate using:  
-  - **Balanced Accuracy**  
-  - **ROC AUC (macro-averaged approach)**  
-- Plot a **single ROC curve** comparing all models.  
-- Display **confusion matrices** for each model.  
+### Example Code:
 
-### **4. Hyperparameter Tuning**  
-- Show results for default settings first.  
-- Use **GridSearchCV** or **RandomizedSearchCV** for optimization.  
-- Compare both results.  
+```python
+rfD = RandomForestClassifier(random_state=7)
+dtD = DecisionTreeClassifier(random_state=7)
+```
 
-### **5. Result Presentation**  
-- Label all tables and graphs clearly.  
-- Print accuracy, ROC AUC, confusion matrices, and final comparisons.  
-- Provide references for any method outside the module.  
----
-## **TLDR**  
+## Hyperparameter Tuning
 
-### **Group Submission**  
-- Code sections: Load dataset, train classifiers, evaluate models, plot comparisons.  
-- Includes results, hyperparameter tuning, ROC curve, confusion matrices.  
+Example Code:
+
+```python
+rfGrid = {'n_estimators': [100, 200], 'max_depth': [None, 10, 20], 'min_samples_split': [2, 10, 20]}
+dtGrid = {'max_depth': [None, 10, 20], 'min_samples_split': [2, 10, 20]}
+```
+
+## Training
+
+Add training code here. Example Code:
+
+```python
+# Train the default models
+rfD.fit(x_train, y_train)
+dtD.fit(x_train, y_train)
+
+# Train the hyperparameter-tuned models
+rfH.fit(x_train, y_train)
+dtH.fit(x_train, y_train)
+```
+
+## Evaluation
+
+This section will contain all the graphs and confusion matrix printing.
+
+## References
+
+Just add links for all sources used in the loading modules and some AI-related references, cause lets be real they know we gonna use AI.
+Also if u used Gemeni mention that u used its auto correct stuff....
